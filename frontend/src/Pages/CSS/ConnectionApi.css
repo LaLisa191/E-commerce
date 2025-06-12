@@ -1,4 +1,3 @@
-/* ESTILOS GENERALES Y LAYOUT PRINCIPAL */
 /* Sección principal de la conexión API */
 .connection-api-section {
   padding: 2rem;
@@ -18,8 +17,6 @@
   margin-bottom: 1.5rem;
   font-weight: 700;
 }
-
-/* INFORMACIÓN DE LA API */
 /* Contenedor de información de la API con layout flex */
 .api-info {
   display: flex;
@@ -34,7 +31,6 @@
   color: #555;
 }
 
-/* SISTEMA DE BOTONES */
 /* Estilo base para todos los botones */
 .btn {
   padding: 0.5rem 1rem;
@@ -67,37 +63,6 @@
   background: #218838;
 }
 
-/* Botón de actualización para formularios */
-.btn-update {
-  background: #3a0fbe;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-/* Hover para botón de actualización */
-.btn-update:hover:not(:disabled) {
-  background: #000;
-}
-
-/* Botón de cancelar (rojo) */
-.btn-cancel {
-  background: red;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Hover para botón de cancelar */
-.btn-cancel:hover:not(:disabled) {
-  background: #5a6268;
-}
-
 /* Estado deshabilitado para botones */
 .btn:disabled {
   opacity: 0.6;
@@ -110,65 +75,6 @@
   gap: 10px;
 }
 
-/* FORMULARIOS DE EDICIÓN */
-/* Formulario de edición (destacado en gris) */
-.edit-form {
-  background-color: #c4c4c4;
-  border: 1px solid #8c8c8c;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-  margin-top: 2rem;
-}
-
-/* Título del formulario de edición */
-.edit-form h3 {
-  color: #000;
-  margin-bottom: 15px;
-  font-size: 1.25rem;
-}
-
-/* Fila de formulario con layout flex para edición */
-.edit-form .form-row {
-  display: flex;
-  gap: 1rem;
-}
-
-/* Grupo de campo individual para edición */
-.edit-form .form-group {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-}
-
-/* Campos de entrada para edición */
-.edit-form .form-group input,
-.edit-form .form-group select {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  width: 100%;
-}
-
-/* Elemento select para edición */
-.edit-form select {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
-  background-color: white;
-}
-
-/* Focus para elementos select de edición */
-.edit-form select:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-}
-
-/* ESTADOS Y MENSAJES */
 /* Mensaje de error (rojo) */
 .alert-error {
   background-color: #ffe6e6;
