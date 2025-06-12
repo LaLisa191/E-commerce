@@ -1,4 +1,6 @@
+// ConnectionApi.js (en Pages)
 import React, { useState, useEffect } from 'react';
+import ProductApi from '../Components/ProductApi/ProductApi'
 import './CSS/ConnectionApi.css';
 
 const ConnectionApi = () => {
@@ -12,7 +14,7 @@ const ConnectionApi = () => {
         new_price: '',
         old_price: ''
     });
-
+    
     const API_BASE_URL = 'http://localhost:3001';
 
     // Obtener todos los productos
@@ -51,7 +53,7 @@ const ConnectionApi = () => {
                 new_price: Number(newProduct.new_price),
                 old_price: Number(newProduct.old_price)
             };
-
+            
             const response = await fetch(`${API_BASE_URL}/crear`, {
                 method: 'POST',
                 headers: {
@@ -59,22 +61,20 @@ const ConnectionApi = () => {
                 },
                 body: JSON.stringify(productToSend),
             });
-
+            
             if (!response.ok) {
                 const errorData = await response.text();
                 throw new Error(`HTTP ${response.status}: ${errorData}`);
             }
-
+            
             const result = await response.json();
             console.log('Producto creado:', result);
-
             setNewProduct({
                 category: '',
                 name: '',
                 new_price: '',
                 old_price: ''
             });
-
             await fetchProduct();
             setError('');
             alert('Producto creado exitosamente!');
@@ -101,7 +101,7 @@ const ConnectionApi = () => {
                 new_price: Number(editingProduct.new_price),
                 old_price: Number(editingProduct.old_price)
             };
-
+            
             const response = await fetch(`${API_BASE_URL}/actualizar/${editingProduct._id}`, {
                 method: 'PUT',
                 headers: {
@@ -109,15 +109,14 @@ const ConnectionApi = () => {
                 },
                 body: JSON.stringify(productToUpdate),
             });
-
+            
             if (!response.ok) {
                 const errorData = await response.text();
                 throw new Error(`HTTP ${response.status}: ${errorData}`);
             }
-
+            
             const result = await response.json();
             console.log('Producto actualizado:', result);
-
             setEditingProduct(null);
             await fetchProduct();
             setError('');
@@ -134,22 +133,21 @@ const ConnectionApi = () => {
     // Eliminar producto
     const deleteProduct = async (id) => {
         if (!window.confirm('¿Estás seguro de eliminar este producto?')) return;
-
         setLoading(true);
+        
         try {
             console.log('Eliminando producto con ID:', id);
             
             const response = await fetch(`${API_BASE_URL}/eliminar/${id}`, {
                 method: 'DELETE',
             });
-
+            
             if (!response.ok) {
                 const errorData = await response.text();
                 throw new Error(`HTTP ${response.status}: ${errorData}`);
             }
-
-            console.log('Producto eliminado exitosamente');
             
+            console.log('Producto eliminado exitosamente');
             await fetchProduct();
             setError('');
             alert('Producto eliminado exitosamente!');
@@ -183,6 +181,7 @@ const ConnectionApi = () => {
         fetchProduct();
     }, []);
 
+    // Manejar cambios en formulario de nuevo producto
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setNewProduct(prev => ({
@@ -191,6 +190,7 @@ const ConnectionApi = () => {
         }));
     };
 
+    // Manejar cambios en formulario de edición
     const handleEditInputChange = (e) => {
         const { name, value } = e.target;
         setEditingProduct(prev => ({
@@ -221,7 +221,7 @@ const ConnectionApi = () => {
         <section id="connection-api" className="connection-api-section">
             <div className="container">
                 <h2>Gestión de Productos</h2>
-
+                
                 {/* Información de la API */}
                 <div className="api-info">
                     <p><strong>API Endpoint:</strong> {API_BASE_URL}</p>
@@ -368,7 +368,7 @@ const ConnectionApi = () => {
                                     className="btn btn-cancel"
                                     disabled={loading}
                                 >
-                                Cancelar
+                                    Cancelar
                                 </button>
                             </div>
                         </form>
@@ -389,53 +389,14 @@ const ConnectionApi = () => {
                     </div>
                 )}
 
-                {/* Lista de productos */}
-                <div className="products-container">
-                    <h3>Productos guardados({product.length})</h3>
-
-                    {loading && <div className="loading">Cargando datos...</div>}
-
-                    {!loading && product.length === 0 && (
-                        <div className="empty-state">
-                            <p>No hay productos registrados en la base de datos</p>
-                            <p>¡Agrega el primer producto usando el formulario!</p>
-                        </div>
-                    )}
-
-                    <div className="products-grid">
-                        {product.map((prod) => (
-                            <div key={prod._id} className="product-card">
-                                <div className="card-header">
-                                    <h4>{prod.name}</h4>
-                                    <div className="card-actions">
-                                        <button
-                                            onClick={() => startEdit(prod)}
-                                            className="btn-edit"
-                                            title="Editar"
-                                            disabled={loading || editingProduct}
-                                        >
-                                            Editar
-                                        </button>
-                                        <button
-                                            onClick={() => deleteProduct(prod._id)}
-                                            className="btn-delete"
-                                            title="Eliminar"
-                                            disabled={loading}
-                                        >
-                                            Eliminar
-                                        </button>
-                                    </div>
-                                </div>
-                                <div className="card-body">
-                                    <p className="category"><strong>Categoria: {prod.category}</strong></p>
-                                    <p className="name">Nombre: {prod.name}</p>
-                                    <p className="new_price">Precio nuevo: ${prod.new_price?.toLocaleString()}</p>
-                                    <p className="old_price">Precio anterior: ${prod.old_price?.toLocaleString()}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                {/* Componente de lista de productos separado */}
+                <ProductApi 
+                    products={product}
+                    loading={loading}
+                    onEdit={startEdit}
+                    onDelete={deleteProduct}
+                    editingProduct={editingProduct}
+                />
             </div>
         </section>
     );

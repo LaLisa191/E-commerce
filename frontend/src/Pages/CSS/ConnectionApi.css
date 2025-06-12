@@ -61,34 +61,6 @@
   margin-top: 1rem;
 }
 
-/* Botón de eliminación (estilo minimalista) */
-.btn-delete {
-  background: #d63031;
-  color: #fff;
-  border: none;
-  padding: 5px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-/* Botón de edición (pequeño para tarjetas) */
-.btn-edit {
-  background: #3a0fbe;
-  color: white;
-  border: none;
-  padding: 5px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 12px;
-  transition: background-color 0.2s;
-}
-
-/* Hover para botón de edición */
-.btn-edit:hover:not(:disabled) {
-  background: #000;
-}
-
 /* Botón de actualización para formularios */
 .btn-update {
   background: #3a0fbe;
@@ -121,14 +93,9 @@
 }
 
 /* Estado deshabilitado para botones */
-.btn:disabled,
-.btn-edit:disabled {
+.btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
-}
-
-.btn-edit:disabled {
-  background: #000;
 }
 
 /* FORMULARIOS Y CAMPOS DE ENTRADA */
@@ -201,64 +168,6 @@ select:focus {
   outline: none;
   border-color: #007bff;
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-}
-
-/* LISTA Y TARJETAS DE PRODUCTOS */
-
-/* Contenedor principal de productos */
-.products-container {
-  margin-top: 3rem;
-}
-
-/* Grid responsive para las tarjetas de productos */
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-/* Tarjeta individual de producto */
-.product-card {
-  background: #fff;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-/* Cabecera de la tarjeta con acciones */
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Contenedor de acciones en la tarjeta */
-.card-actions {
-  display: flex;
-  gap: 5px;
-}
-
-/* Cuerpo de la tarjeta con información del producto */
-.card-body p {
-  margin: 0.25rem 0;
-}
-
-/* Nombre del producto (destacado) */
-.card-body .name {
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-/* Precio actual (negro) */
-.card-body .new_price {
-  color: #000;
-}
-
-/* Precio anterior (tachado y gris) */
-.card-body .old_price {
-  text-decoration: line-through;
-  color: #8c8c8c;
 }
 
 /* ESTADOS Y MENSAJES */
