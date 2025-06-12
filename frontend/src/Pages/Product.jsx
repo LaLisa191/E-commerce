@@ -6,9 +6,13 @@ import ProductDisplay from '../Components/ProductDisplay/ProductDisplay';
 import RelatedProducts from '../Components/RelatedProducts/RelatedProducts';
 
 const Product = () => {
+    // Obtiene todos los productos del contexto global
     const  {all_product} = useContext(ShopContext);
+    // Extrae el ID del producto desde la URL
     const {productId} = useParams();
+    // Busca el producto específico por ID
     const product = all_product.find((e) => e.id === Number (productId));
+    
   return (
     <div>
       <Breadcrums product={product} />

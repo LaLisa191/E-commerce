@@ -27,7 +27,7 @@ const ConnectionApi = () => {
             }
             
             const data = await response.json();
-            console.log('Products received:', data);
+            console.log('Productos recibidos:', data);
             setProduct(data);
             setError('');
         } catch (err) {
@@ -205,14 +205,14 @@ const ConnectionApi = () => {
             console.log('Probando conexión...');
             const response = await fetch(`${API_BASE_URL}/todas`);
             if (response.ok) {
-                alert('✅ Conexión exitosa con la API!');
+                alert('Conexión exitosa con la API!');
                 setError('');
             } else {
                 throw new Error(`HTTP ${response.status}`);
             }
         } catch (err) {
             console.error('Connection test failed:', err);
-            alert('❌ Error de conexión: ' + err.message);
+            alert('Error de conexión: ' + err.message);
             setError('Error de conexión: ' + err.message);
         }
     };
@@ -231,14 +231,14 @@ const ConnectionApi = () => {
                             className="btn btn-refresh"
                             disabled={loading}
                         >
-                            {loading ? 'Cargando...' : '🔄 Actualizar Datos'}
+                            {loading ? 'Cargando...' : 'Actualizar Datos'}
                         </button>
                         <button
                             onClick={testConnection}
                             className="btn btn-test"
                             disabled={loading}
                         >
-                            🔗 Probar Conexión
+                            Probar Conexión
                         </button>
                     </div>
                 </div>
@@ -298,7 +298,7 @@ const ConnectionApi = () => {
                                 </div>
                             </div>
                             <button type="submit" className="btn btn-create" disabled={loading}>
-                                {loading ? 'Creando...' : '➕ Agregar Producto'}
+                                {loading ? 'Creando...' : 'Agregar Producto'}
                             </button>
                         </form>
                     </div>
@@ -360,7 +360,7 @@ const ConnectionApi = () => {
                             </div>
                             <div className="button-group">
                                 <button type="submit" className="btn btn-update" disabled={loading}>
-                                    {loading ? 'Actualizando...' : '✏️ Actualizar Producto'}
+                                    {loading ? 'Actualizando...' : 'Actualizar Producto'}
                                 </button>
                                 <button 
                                     type="button" 
@@ -368,7 +368,7 @@ const ConnectionApi = () => {
                                     className="btn btn-cancel"
                                     disabled={loading}
                                 >
-                                    ❌ Cancelar
+                                Cancelar
                                 </button>
                             </div>
                         </form>
@@ -391,13 +391,13 @@ const ConnectionApi = () => {
 
                 {/* Lista de productos */}
                 <div className="products-container">
-                    <h3>Productos desde la API ({product.length})</h3>
+                    <h3>Productos guardados({product.length})</h3>
 
                     {loading && <div className="loading">Cargando datos...</div>}
 
                     {!loading && product.length === 0 && (
                         <div className="empty-state">
-                            <p>No hay productos registrados en la API.</p>
+                            <p>No hay productos registrados en la base de datos</p>
                             <p>¡Agrega el primer producto usando el formulario!</p>
                         </div>
                     )}
@@ -414,7 +414,7 @@ const ConnectionApi = () => {
                                             title="Editar"
                                             disabled={loading || editingProduct}
                                         >
-                                            ✏️
+                                            Editar
                                         </button>
                                         <button
                                             onClick={() => deleteProduct(prod._id)}
@@ -422,16 +422,15 @@ const ConnectionApi = () => {
                                             title="Eliminar"
                                             disabled={loading}
                                         >
-                                            🗑️
+                                            Eliminar
                                         </button>
                                     </div>
                                 </div>
                                 <div className="card-body">
-                                    <p className="category"><strong>📂 {prod.category}</strong></p>
-                                    <p className="name">📝 {prod.name}</p>
-                                    <p className="new_price">💰 Precio nuevo: ${prod.new_price?.toLocaleString()}</p>
-                                    <p className="old_price">💸 Precio anterior: ${prod.old_price?.toLocaleString()}</p>
-                                    {prod._id && <small className="product-id">ID: {prod._id}</small>}
+                                    <p className="category"><strong>Categoria: {prod.category}</strong></p>
+                                    <p className="name">Nombre: {prod.name}</p>
+                                    <p className="new_price">Precio nuevo: ${prod.new_price?.toLocaleString()}</p>
+                                    <p className="old_price">Precio anterior: ${prod.old_price?.toLocaleString()}</p>
                                 </div>
                             </div>
                         ))}

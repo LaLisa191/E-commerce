@@ -7,7 +7,7 @@ const startServer = async () => {
   try {
     // Conectar a la base de datos
     await connectDB();
-    console.log("✅ Base de datos conectada");
+    console.log("Base de datos conectada");
  
     const app = express();
     
@@ -41,12 +41,12 @@ const startServer = async () => {
  
     const PORT = 3001;
     app.listen(PORT, () => {
-      console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
-      console.log(`📡 API disponible en http://localhost:${PORT}/api`);
+      console.log(`Servidor corriendo en http://localhost:${PORT}`);
+      console.log(`API disponible en http://localhost:${PORT}/api`);
     });
     
   } catch (error) {
-    console.error("❌ Error al iniciar el servidor:", error);
+    console.error("Error al iniciar el servidor:", error);
     process.exit(1);
   }
 };

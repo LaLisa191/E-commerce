@@ -1,3 +1,4 @@
+/* Contenedor principal - flexbox vertical centrado */
 .shop-category {
   width: 100%;
   display: flex;
@@ -5,7 +6,7 @@
   align-items: center;
 }
 
-/* Banner centrado */
+/* Banner de categoría - centrado con ancho máximo */
 .shopcategory-banner {
   display: block;
   margin: 30px auto;
@@ -13,7 +14,7 @@
   max-width: 1200px;
 }
 
-/* Contenedor centralizado */
+/* Contenedor centralizado con padding lateral */
 .shopcategory-container {
   width: 100%;
   max-width: 1200px;
@@ -21,7 +22,7 @@
   margin: 0 auto;
 }
 
-/* Contenedor "Mostrando..." y "Ordenar por" */
+/* Barra de información y selector de orden - layout horizontal */
 .shopcategory-indexSort {
   display: flex;
   justify-content: space-between;
@@ -29,7 +30,7 @@
   margin: 20px 0;
 }
 
-/* Estilo del botón de ordenar */
+/* Botón de ordenamiento - estilo redondeado con icono */
 .shopCategory-sort {
   padding: 10px 20px;
   border-radius: 40px;
@@ -40,16 +41,18 @@
   cursor: pointer;
 }
 
+/* Icono del botón de ordenar - tamaño pequeño */
 .shopCategory-sort img {
   width: 15px;
-  height: 15px; 
+  height: 15px;
 }
 
+/* Texto destacado en información de productos */
 .shopcategory-indexSort p span {
   font-weight: 600;
 }
 
-/* Productos en cuadrícula */
+/* Cuadrícula de productos - grid responsive de 4 columnas */
 .shopcategory-products {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -58,18 +61,18 @@
   margin-bottom: 40px;
 }
 
-/* Media queries para responsividad */
+/* Tablets grandes - 3 columnas */
 @media (max-width: 992px) {
   .shopcategory-products {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
+/* Tablets y móviles - 2 columnas y layout vertical para controles */
 @media (max-width: 768px) {
   .shopcategory-products {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .shopcategory-indexSort {
     flex-direction: column;
     align-items: flex-start;
@@ -77,17 +80,18 @@
   }
 }
 
+/* Móviles pequeños - 1 columna y botón ancho completo */
 @media (max-width: 480px) {
   .shopcategory-products {
     grid-template-columns: 1fr;
   }
-
   .shopCategory-sort {
     width: 100%;
     justify-content: space-between;
   }
 }
 
+/* Botón "Cargar más" - estilo píldora centrado */
 .shopcategory-loadmore {
   display: flex;
   justify-content: center;

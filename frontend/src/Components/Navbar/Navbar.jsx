@@ -3,7 +3,7 @@ import './Navbar.css'
 
 import nuevo_logo from '../Assets/nuevo-logo.png'
 import carrito_pag from '../Assets/carrito-pag.png'
-import { href, Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContext';
 
 
@@ -65,7 +65,7 @@ export const Navbar = () => {
               <img src={carrito_pag} alt="carrito" />
               <div className='nav-cart-count'>{getTotalCartItems()}</div>
             </div>
-          </Link>   {/*la parte incrementable del carrito*/}
+          </Link>   
         </div>
     </div>
   )

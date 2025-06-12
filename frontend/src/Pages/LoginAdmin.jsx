@@ -9,7 +9,7 @@ const LoginAdmin = () => {
     e.preventDefault();
 
     // Aquí deberías validar con backend
-    // Por ahora solo redirige a /admin
+    // Por ahora solo redirige a /ConnectionApi
     navigate('/api');
   };
 
