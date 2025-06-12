@@ -1,0 +1,78 @@
+/* Contenedor principal del formulario */
+.form-container {
+  margin-top: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Título del formulario */
+.form-container h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+/* Fila de formulario con layout flex */
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Grupo de campo individual */
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+/* Campos de entrada y área de texto */
+.form-group input,
+.form-group textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+/* Elemento select personalizado */
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+}
+
+/* Focus para elementos select */
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* SISTEMA DE BOTONES */
+/* Estilo base para todos los botones */
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+/* Botón para crear nuevos elementos */
+.btn-create {
+  background-color: #3a0fbe;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+/* Estado deshabilitado para botones */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

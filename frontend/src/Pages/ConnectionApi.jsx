@@ -1,6 +1,7 @@
 // ConnectionApi.js (en Pages)
 import React, { useState, useEffect } from 'react';
 import ProductApi from '../Components/ProductApi/ProductApi'
+import ProductCreateForm from '../Components/ProductCreateForm/ProductCreateForm';
 import './CSS/ConnectionApi.css';
 
 const ConnectionApi = () => {
@@ -245,63 +246,12 @@ const ConnectionApi = () => {
 
                 {/* Formulario para crear nuevo producto */}
                 {!editingProduct && (
-                    <div className="form-container">
-                        <h3>Agregar Nuevo Producto</h3>
-                        <form onSubmit={createProduct}>
-                            <div className="form-row">
-                                <div className="form-group">
-                                    <select
-                                        name="category"
-                                        value={newProduct.category}
-                                        onChange={handleInputChange}
-                                        required
-                                    >
-                                        <option value="">Seleccionar categoría</option>
-                                        <option value="mujer">Mujer</option>
-                                        <option value="hombre">Hombre</option>
-                                        <option value="deportivo">Deportivo</option>
-                                    </select>
-                                </div>
-                                <div className="form-group">
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        value={newProduct.name}
-                                        onChange={handleInputChange}
-                                        placeholder="Nombre del producto"
-                                        required
-                                    />
-                                </div>
-                            </div>
-                            <div className="form-row">
-                                <div className="form-group">
-                                    <input
-                                        type="number"
-                                        name="new_price"
-                                        value={newProduct.new_price}
-                                        onChange={handleInputChange}
-                                        placeholder="Precio nuevo (ej: 40000)"
-                                        min="0"
-                                        required
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <input
-                                        type="number"
-                                        name="old_price"
-                                        value={newProduct.old_price}
-                                        onChange={handleInputChange}
-                                        placeholder="Precio anterior (ej: 60000)"
-                                        min="0"
-                                        required
-                                    />
-                                </div>
-                            </div>
-                            <button type="submit" className="btn btn-create" disabled={loading}>
-                                {loading ? 'Creando...' : 'Agregar Producto'}
-                            </button>
-                        </form>
-                    </div>
+                    <ProductCreateForm 
+                        newProduct={newProduct}
+                        onInputChange={handleInputChange}
+                        onSubmit={createProduct}
+                        loading={loading}
+                    />
                 )}
 
                 {/* Formulario para editar producto */}
