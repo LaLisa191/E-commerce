@@ -161,3 +161,85 @@
   color: #666;
   font-style: italic;
 }
+
+/* Agregar a tu CSS/ConnectionApi.css */
+
+.edit-form {
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.edit-form h3 {
+  color: #856404;
+  margin-bottom: 15px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-edit {
+  background: #17a2b8;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.2s;
+}
+
+.btn-edit:hover:not(:disabled) {
+  background: #138496;
+}
+
+.btn-edit:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.btn-update {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.btn-update:hover:not(:disabled) {
+  background: #218838;
+}
+
+.btn-cancel {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-cancel:hover:not(:disabled) {
+  background: #5a6268;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+}
+
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
