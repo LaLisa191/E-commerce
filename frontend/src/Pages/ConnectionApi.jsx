@@ -190,7 +190,7 @@ const ConnectionApi = () => {
                                     name="category"
                                     value={newProduct.category}
                                     onChange={handleInputChange}
-                                    placeholder="Categoría (ej: deportivo, casual)"
+                                    placeholder="Categoría (ej: deportivo, mujer, hombre)"
                                     required
                                 />
                             </div>

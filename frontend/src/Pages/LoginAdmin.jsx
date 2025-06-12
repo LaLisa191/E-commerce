@@ -16,7 +16,7 @@ const LoginAdmin = () => {
   return (
     <div className='loginsignup'>
       <div className="loginsignup-container">
-        <h1>Iniciar Sesión como Administrador</h1>
+        <h1>Iniciar Sesión</h1>
         <form onSubmit={handleLogin}>
           <div className="loginignup-fields">
             <input type="email" placeholder='Correo electrónico' required />
