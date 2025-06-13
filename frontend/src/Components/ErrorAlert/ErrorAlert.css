@@ -1,0 +1,29 @@
+/* Mensaje de error (rojo) */
+.alert-error {
+  background-color: #ffe6e6;
+  padding: 1rem;
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  border-radius: 8px;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Botón de cerrar para alertas */
+.btn-close {
+  margin-left: 10px;
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+/* Hover para botón de cerrar */
+.btn-close:hover {
+  opacity: 0.7;
+}
