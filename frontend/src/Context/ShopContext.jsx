@@ -13,8 +13,8 @@ const getDefaultCart = () => {
 
     //Si no hay un carrito guardado, inicialice el carrito predeterminado
     let cart = {};
-    for (let index=0; index < all_product.length+1; index ++) {
-        cart [index] = 0;
+    for (let index = 0; index < all_product.length+1; index ++) {
+        cart[index] = 0;
     }
     return cart;
 }

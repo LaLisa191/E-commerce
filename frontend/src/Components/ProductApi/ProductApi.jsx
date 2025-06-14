@@ -76,7 +76,6 @@ const ProductCard = ({
                 <p className="category">
                     <strong>Categoria: {product.category}</strong>
                 </p>
-                <p className="name">Nombre: {product.name}</p>
                 <p className="new_price">
                     Precio nuevo: ${product.new_price?.toLocaleString()}
                 </p>

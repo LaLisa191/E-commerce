@@ -11,7 +11,7 @@ const productosTiendaSchema = new mongoose.Schema({
   old_price: { type: Number, required: true, min: 0 }
 }, {
   timestamps: true,
-  collection: 'productos' // ¡Especifica el nombre exacto de la colección!
+  collection: 'productos' // Especificar el nombre exacto de la colección
 });
 
 productosTiendaSchema.plugin(AutoIncrement, { inc_field: 'id' });
